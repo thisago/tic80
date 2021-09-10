@@ -1,0 +1,82 @@
+ticHeader	tic80.html#ticHeader,string,string,string,string	tic80: ticHeader(title, author, desc: string; saveId = &quot;&quot;): string	
+TIC	tic80.html#TIC.t,untyped	tic80: TIC(body: untyped): untyped	
+DisplaySize	tic80.html#DisplaySize	tic80: DisplaySize	
+SCN	tic80.html#SCN.t,untyped,untyped	tic80: SCN(scanline: untyped; body: untyped): untyped	
+OVR	tic80.html#OVR.t,untyped,untyped	tic80: OVR(scanline: untyped; body: untyped): untyped	
+Button	tic80.html#Button	tic80: Button	
+BtnUp	tic80.html#BtnUp	Buttons.BtnUp	
+BtnDown	tic80.html#BtnDown	Buttons.BtnDown	
+BtnLeft	tic80.html#BtnLeft	Buttons.BtnLeft	
+BtnRight	tic80.html#BtnRight	Buttons.BtnRight	
+BtnA	tic80.html#BtnA	Buttons.BtnA	
+BtnB	tic80.html#BtnB	Buttons.BtnB	
+BtnX	tic80.html#BtnX	Buttons.BtnX	
+BtnY	tic80.html#BtnY	Buttons.BtnY	
+Buttons	tic80.html#Buttons	tic80: Buttons	
+Color	tic80.html#Color	tic80: Color	
+DefaultPallete	tic80.html#DefaultPallete	tic80: DefaultPallete	
+SpriteWithFlag	tic80.html#SpriteWithFlag	tic80: SpriteWithFlag	
+SpriteFlag	tic80.html#SpriteFlag	tic80: SpriteFlag	
+Key	tic80.html#Key	tic80: Key	
+Keys	tic80.html#Keys	tic80: Keys	
+MapTile	tic80.html#MapTile	tic80: MapTile	
+Sprite	tic80.html#Sprite	tic80: Sprite	
+MusicTrack	tic80.html#MusicTrack	tic80: MusicTrack	
+MusicFrame	tic80.html#MusicFrame	tic80: MusicFrame	
+MusicRow	tic80.html#MusicRow	tic80: MusicRow	
+MusicTempo	tic80.html#MusicTempo	tic80: MusicTempo	
+MusicSpeed	tic80.html#MusicSpeed	tic80: MusicSpeed	
+Byte4	tic80.html#Byte4	tic80: Byte4	
+AudioSfx	tic80.html#AudioSfx	tic80: AudioSfx	
+AudioNote	tic80.html#AudioNote	tic80: AudioNote	
+AudioChannel	tic80.html#AudioChannel	tic80: AudioChannel	
+AudioVolume	tic80.html#AudioVolume	tic80: AudioVolume	
+AudioSpeed	tic80.html#AudioSpeed	tic80: AudioSpeed	
+TransformFlip	tic80.html#TransformFlip	tic80: TransformFlip	
+TransformRotate	tic80.html#TransformRotate	tic80: TransformRotate	
+MemoryBank	tic80.html#MemoryBank	tic80: MemoryBank	
+noColor	tic80.html#noColor	tic80: noColor	
+btn	tic80.html#btn,Buttons	tic80: btn(id: Buttons): bool	
+btnp	tic80.html#btnp,Buttons,int,int	tic80: btnp(id: Buttons; hold, period: int): bool	
+clip	tic80.html#clip,int,int,int,int	tic80: clip(x, y, width, height: int)	
+clip	tic80.html#clip	tic80: clip()	
+cls	tic80.html#cls,Color	tic80: cls(color: Color = 0)	
+circ	tic80.html#circ,int,int,int,Color	tic80: circ(x, y, radius: int; color: Color)	
+circb	tic80.html#circb,int,int,int,Color	tic80: circb(x, y, radius: int; color: Color)	
+circb	tic80.html#circb,int,int,int,int,Color	tic80: circb(x, y, radiusH, radiusW: int; color: Color)	
+exit	tic80.html#exit	tic80: exit()	
+fget	tic80.html#fget,SpriteWithFlag,SpriteFlag	tic80: fget(spriteId: SpriteWithFlag; flag: SpriteFlag): bool	
+fset	tic80.html#fset,SpriteWithFlag,SpriteFlag,bool	tic80: fset(spriteId: SpriteWithFlag; flag: SpriteFlag; state: bool)	
+font	tic80.html#font,cstring,int,int,Color,int,int,int	tic80: font(text: cstring; x, y: int; transparentColor: Color;\n     charWidth, charHeight: int; fixed = false; scale = 1)	
+key	tic80.html#key,Key	tic80: key(code: Key)	
+keyp	tic80.html#keyp,Key,int,int	tic80: keyp(code: Key; hold, pediod: int)	
+line	tic80.html#line,int,int,int,int,Color	tic80: line(x0, y0, x1, y1: int; color: Color)	
+map	tic80.html#map,int,int,int,int,int,int,Color,int,typedesc[proc (tileId: int, x: int, y: int): array[0..2, int]{.closure.}]	tic80: map(x, y: int; w = 30; h = 17; sx = 0; sy = 0; colorkey: Color = noColor;\n    scale = 1; remap = proc (tileId, x, y: int): array[3, int])	
+memcpy	tic80.html#memcpy,int,int,int	tic80: memcpy(toAddr, fromAddr, length: int)	
+memset	tic80.html#memset,int,byte,int	tic80: memset(memAddr: int; value: byte; length: int)	
+mget	tic80.html#mget,int,int	tic80: mget(x, y: int): MapTile	
+mset	tic80.html#mset,int,int,MapTile	tic80: mset(x, y: int; tile: MapTile)	
+mouse	tic80.html#mouse	tic80: mouse(): array[7, int]	
+music	tic80.html#music,MusicTrack,MusicFrame,MusicRow,MusicTempo,MusicSpeed	tic80: music(track: MusicTrack; frame: MusicFrame = -1; row: MusicRow = -1;\n      loop = true; sustain = false; tempo: MusicTempo = -1;\n      speed: MusicSpeed = -1)	
+music	tic80.html#music	tic80: music()	
+peek	tic80.html#peek,int	tic80: peek(ramAddr: int): byte	
+peek4	tic80.html#peek4,int	tic80: peek4(ramAddr4: int): Byte4	
+pix	tic80.html#pix,int,int,Color	tic80: pix(x, y: int; color: Color)	
+pix	tic80.html#pix,int,int	tic80: pix(x, y: int): Color	
+pmem	tic80.html#pmem,byte,uint32	tic80: pmem(index: byte; value: uint32)	
+pmem	tic80.html#pmem,byte	tic80: pmem(index: byte): uint32	
+poke	tic80.html#poke,int,byte	tic80: poke(ramAddr: int; val: byte)	
+poke4	tic80.html#poke4,int,Byte4	tic80: poke4(ramAddr: int; val: Byte4)	
+print	tic80.html#print,cstring,int,int,Color,int	tic80: print(text: cstring; x = 0; y = 0; color: Color = DefaultPallete.white;\n      fixed = false; scale = 1; smallfont = false)	
+rect	tic80.html#rect,int,int,int,int,Color	tic80: rect(x, y, w, h: int; color: Color)	
+rectb	tic80.html#rectb,int,int,int,int,Color	tic80: rectb(x, y, w, h: int; color: Color)	
+reset	tic80.html#reset	tic80: reset()	
+sfx	tic80.html#sfx,AudioSfx,AudioNote,int,AudioChannel,AudioVolume,AudioSpeed	tic80: sfx(id: AudioSfx; note: AudioNote = -1; duration = -1;\n    channel: AudioChannel = 0; volume: AudioVolume = 15; speed: AudioSpeed = 0)	
+spr	tic80.html#spr,Sprite,int,int,Color,int,TransformFlip,TransformRotate,int,int	tic80: spr(id: Sprite; x, y: int; transparentColor: Color = noColor; scale = 1;\n    flip: TransformFlip = 0; rotate: TransformRotate = 0; w = 1; h = 1)	
+sync	tic80.html#sync,int,MemoryBank	tic80: sync(mask = 0; bank: MemoryBank = 0; toCart = false)	
+time	tic80.html#time	tic80: time(): uint64	
+tstamp	tic80.html#tstamp	tic80: tstamp(): uint64	
+trace	tic80.html#trace,cstring,Color	tic80: trace(message: cstring; color: Color = DefaultPallete.black)	
+tri	tic80.html#tri,int,int,int,int,int,int,Color	tic80: tri(x1, y1, x2, y2, x3, y3: int; color: Color)	
+trib	tic80.html#trib,int,int,int,int,int,int,Color	tic80: trib(x1, y1, x2, y2, x3, y3: int; color: Color)	
+textri	tic80.html#textri,int,int,int,int,int,int,int,int,int,int,int,int,seq[Color]	tic80: textri(x1, y1, x2, y2, x3, y3, u1, v1, u2, v2, u3, v3: int; use_map = false;\n       trans: seq[Color] = @[])	

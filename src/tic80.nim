@@ -1,13 +1,13 @@
 #[
   Created at: 09/10/2021 18:18:42 Friday
-  Modified at: 09/10/2021 06:36:21 PM Friday
+  Modified at: 09/10/2021 06:54:22 PM Friday
 
         Copyright (C) 2021 Thiago Navarro
   See file "license" for details about copyright
 ]#
 
 
-when not defined(js) and not defined(nimsuggest):
+when not defined(js) and not defined(nimsuggest) and not defined(nimdoc):
   {.fatal: "At now, this module just works with Javascript backend.".}
 
 proc ticHeader*(title, author, desc: string; saveId = ""): string =
@@ -108,11 +108,11 @@ type
   AudioSfx* = range[-1..63]
     ## All possible sfx
     ##
-    ## -1 is for stop playing in `sfx`
+    ## The -1 is for stop playing in `sfx`
   AudioNote* = range[-1..95]
     ## All possible notes
     ##
-    ## -1 is for stop playing in `sfx`
+    ## The -1 is for stop playing in `sfx`
   AudioChannel* = range[0..3]
     ## The channel of sfx
   AudioVolume* = range[0..15]
@@ -309,8 +309,8 @@ proc pmem*(index: byte; value: uint32)
   ## Data is stored as unsigned 32-bit integers (from 0 to 4294967295).
   ##
   ## Tips:
-  ##   pmem depends on the cartridge hash (md5), so don't change your lua script if you want to keep the data.
-  ##   Use saveid: with a personalized string in the header metadata to override the default MD5 calculation. This allows the user to update a cart without losing their saved data.
+  ##   - pmem depends on the cartridge hash (md5), so don't change your lua script if you want to keep the data.
+  ##   - Use saveid: with a personalized string in the header metadata to override the default MD5 calculation. This allows the user to update a cart without losing their saved data.
   ##
   ## Saving
   ##
@@ -321,8 +321,8 @@ proc pmem*(index: byte): uint32
   ## Data is stored as unsigned 32-bit integers (from 0 to 4294967295).
   ##
   ## Tips:
-  ##   pmem depends on the cartridge hash (md5), so don't change your lua script if you want to keep the data.
-  ##   Use saveid: with a personalized string in the header metadata to override the default MD5 calculation. This allows the user to update a cart without losing their saved data.
+  ##   -pmem depends on the cartridge hash (md5), so don't change your lua script if you want to keep the data.
+  ##   -Use saveid: with a personalized string in the header metadata to override the default MD5 calculation. This allows the user to update a cart without losing their saved data.
   ##
   ## Reading
   ##
@@ -399,16 +399,16 @@ proc spr*(id: Sprite; x, y: int; transparentColor: Color = noColor; scale = 1;
   ##
   ## You can flip the sprite where:
   ##
-  ## 0 = No Flip
-  ## 1 = Flip horizontally
-  ## 2 = Flip vertically
-  ## 3 = Flip both vertically and horizontally
+  ## - 0 = No Flip
+  ## - 1 = Flip horizontally
+  ## - 2 = Flip vertically
+  ## - 3 = Flip both vertically and horizontally
   ## When you rotate the sprite, it's rotated clockwise in 90° steps:
   ##
-  ## 0 = No rotation
-  ## 1 = 90° rotation
-  ## 2 = 180° rotation
-  ## 3 = 270° rotation
+  ## - 0 = No rotation
+  ## - 1 = 90° rotation
+  ## - 2 = 180° rotation
+  ## - 3 = 270° rotation
   ## You can draw a composite sprite (consisting of a rectangular region of sprites from the sprite sheet) by specifying the w and h parameters (which default to 1).
   ##
   ## Reference https://github.com/nesbox/TIC-80/wiki/spr
@@ -417,13 +417,13 @@ proc sync*(mask = 0; bank: MemoryBank = 0; toCart = false)
   ## To switch between these banks, sync can be used to either load contents from a memory bank to runtime, or save contents from the active runtime to a bank.
   ## The function can only be called once per frame.
   ##
-  ## tiles   = 1<<0 -- 1
-  ## sprites = 1<<1 -- 2
-  ## map     = 1<<2 -- 4
-  ## sfx     = 1<<3 -- 8
-  ## music   = 1<<4 -- 16
-  ## palette = 1<<5 -- 32
-  ## flags   = 1<<6 -- 64
+  ## - tiles   = 1<<0 -- 1
+  ## - sprites = 1<<1 -- 2
+  ## - map     = 1<<2 -- 4
+  ## - sfx     = 1<<3 -- 8
+  ## - music   = 1<<4 -- 16
+  ## - palette = 1<<5 -- 32
+  ## - flags   = 1<<6 -- 64
   ## screen  = 1<<7 -- 128 (as of 0.90)
   ##
   ## Use sync() to save data you modify during runtime and would like to persist, or to restore runtime data from the cartridge.
@@ -449,8 +449,8 @@ proc trace*(message: cstring; color: Color = DefaultPallete.black)
   ## This is a service function, useful for debugging your code. It prints the message parameter to the console in the (optional) color specified.
   ##
   ## Tips:
-  ##   The Lua concatenation operator is .. (two periods)
-  ##   Use the console cls command to clear the output from trace
+  ##   - The Lua concatenation operator is .. (two periods)
+  ##   - Use the console cls command to clear the output from trace
   ##
   ##
   ## Reference https://github.com/nesbox/TIC-80/wiki/trace
