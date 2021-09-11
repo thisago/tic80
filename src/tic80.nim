@@ -6,6 +6,7 @@
   See file "license" for details about copyright
 ]#
 
+import sugar
 
 when not defined(js) and not defined(nimsuggest) and not defined(nimdoc):
   {.fatal: "At now, this module just works with Javascript backend.".}
@@ -224,7 +225,7 @@ proc line*(x0, y0, x1, y1: int; color: Color)
   ##
   ## Reference https://github.com/nesbox/TIC-80/wiki/line
 proc map*(x, y: int; w = 30; h = 17; sx = 0; sy = 0; colorkey: Color = noColor;
-          scale = 1; remap = proc(tileId, x, y: int): array[3, int])
+          scale = 1; remap = (tileId, x, y: int64) => [tileId, 0, 0])
   ## The map consists of cells of 8x8 pixels, each of which can be filled with a tile (sprite) using the map editor.
   ## The map can be up to 240 cells wide by 136 deep.
   ## This function will draw the desired area of the map to a specified screen position.
