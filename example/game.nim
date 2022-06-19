@@ -1,11 +1,3 @@
-#[
-  Created at: 09/10/2021 18:19:06 Friday
-  Modified at: 09/10/2021 06:19:09 PM Friday
-
-        Copyright (C) 2021 Thiago Navarro
-  See file "license" for details about copyright
-]#
-
 # Default TIC-80 example game ported to nim
 import tic80
 

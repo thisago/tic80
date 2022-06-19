@@ -1,11 +1,3 @@
-#[
-  Created at: 09/10/2021 18:18:42 Friday
-  Modified at: 09/10/2021 06:54:22 PM Friday
-
-        Copyright (C) 2021 Thiago Navarro
-  See file "license" for details about copyright
-]#
-
 import sugar
 
 when not defined(js) and not defined(nimsuggest) and not defined(nimdoc):
